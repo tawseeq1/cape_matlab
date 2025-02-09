@@ -1,0 +1,20 @@
+
+Lx = 1
+Ly = 1
+Nx = 100
+Ny = 100
+
+x = linspace (0, Lx, Nx);
+y = linspace (0, Ly, Ny);
+[X, Y] = meshgrid(x, y);
+U = Y;
+V = 0;
+v_mag = sqrt(U.^2 + V.^2);
+figure;
+contourf(X, Y, v_mag, 20);
+colorbar;
+title ('1D Fluid Flow');
+xlabel ('Position of x in meters')
+ylabel ('Velocity in m/s')
+axis equal
+saveas (gcf, 'prob4.png');
